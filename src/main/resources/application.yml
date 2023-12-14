@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: CareForUs
+
+  security:
+    user:
+      name: user
+      password: 1234
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    defer-datasource-initialization: true
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui
+    enabled: true
+
+careforus:
+  exception:
+    responses-system-message: true
+
+cookie:
+  path: /
+  access-token:
+    name: can
+  refresh-token:
+    name: crn
+  max-age:
+    logout: 0
+    value: 604800
